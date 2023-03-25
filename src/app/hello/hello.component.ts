@@ -7,6 +7,10 @@ import {Component} from '@angular/core';
   <h2>Your name: {{ user.name }}</h2>
   <h3>Your age: {{user.age}}</h3>
   <button (click)="showInfo()">Click me !</button>
+  <div *ngIf="user.age >= 13; else noPG">Bạn có thể xem nội dung này</div>
+  <ng-template #noPG>
+      Không được phép xem, vì giới hạn độ tuổi
+  </ng-template>
   `,
 
 })
