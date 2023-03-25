@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { HiComponent } from './hi/hi.component';
 import { Bai05Component } from './bai05/bai05.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     HiComponent,
-    Bai05Component
+    Bai05Component,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
