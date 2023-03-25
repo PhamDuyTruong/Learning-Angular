@@ -3,4 +3,24 @@
 <app-bai05></app-bai05>
 <br />
 <input type="text" [(ngModel)]="name"  (ngModelChange)="name = $event"/>
+<br />
+<p class="foo" [style]="{color: 'red', backgroundColor: 'yellow'}">
+ Start editing to see some magic happen
+</p>
 
+<button (click)="isDanger = !isDanger">
+  Toggle Danger
+</button>
+<br />
+
+<button (click)="isWarning = !isWarning">
+    Toggle Warning
+</button>
+
+<!-- Cách 1 -->
+<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning">
+</div>
+
+<!-- Cách 2 -->
+<div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}">
+</div>
