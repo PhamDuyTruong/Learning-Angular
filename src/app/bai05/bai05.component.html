@@ -1,0 +1,31 @@
+
+<div *ngFor="let author of authors">
+  {{author.id}} - {{author.firstName}} {{author.lastName}}
+</div>
+<br />
+
+<!-- ng-Template -->
+<ng-template
+ ngFor
+ [ngForOf]="authors"
+ let-author
+ let-idx = "index"
+ let-total = "count"
+>
+  <div>
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+  </div>
+</ng-template>
+
+<!-- Structure directive  -->
+<div *ngFor="let author of authors">
+    <div *ngIf="author.age > 13; else noAge">
+       Bạn được phép thêm sách
+    </div>
+    <ng-template #noAge>
+        <div>
+          Bạn không được phép thêm sách
+        </div>
+    </ng-template>
+</div>
