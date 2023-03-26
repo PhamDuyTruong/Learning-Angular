@@ -40,4 +40,8 @@
 
 <!-- Bai 9 -->
 <br />
-<app-toggle [(checked)]="checked"></app-toggle>
+<!-- ToggleComp là instance của ToggleComponent -->
+<app-toggle #toggleComp [(checked)]="checked"></app-toggle>
+
+<!-- Bai 10 -->
+<button (click)="toggleComp.toggle()">Toggle me</button>
