@@ -10,5 +10,6 @@ export class AppComponent {
   name = 'angular 13';
   isDanger = false;
   isWarning = false;
+  checked=true;
 
 }
