@@ -1,0 +1,11 @@
+<app-author-detail
+  *ngFor="let author of authors"
+  [author] = "author"
+  (select)="onSelected($event)"
+  (delete)="handleDelete($event)"
+>
+</app-author-detail>
+<br />
+<div>
+  Current Selected author: {{currentAuthor.firstName}} {{currentAuthor.lastName}}
+</div>
