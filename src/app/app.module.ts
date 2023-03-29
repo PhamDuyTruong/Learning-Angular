@@ -10,6 +10,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { TabGroupComponent } from './tab-group/tab-group.component';
+import { TabPanelComponent } from './tab-panel/tab-panel.component';
+import {TabPanelContentDirective} from './tab-panel-content.directive'
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ToggleComponent } from './toggle/toggle.component';
     ProgressBarComponent,
     AuthorListComponent,
     AuthorDetailComponent,
-    ToggleComponent
+    ToggleComponent,
+    TabGroupComponent,
+    TabPanelComponent,
+    TabPanelContentDirective
   ],
   imports: [
     BrowserModule,

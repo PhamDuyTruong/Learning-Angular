@@ -64,3 +64,21 @@
 <ng-template #counterTmpl>
   <span class="badge badge-danger">{{counter}}</span> items
 </ng-template>
+
+<!-- Bai 15 -->
+<br />
+<button class="btn btn-primary" (click)="showTab = !showTab">Toggle Tab 4</button>
+<app-tab-group>
+  <app-tab-panel title="Tab 1">
+    Content tab 1
+  </app-tab-panel>
+  <app-tab-panel title="Tab 2">
+    content tab 2
+  </app-tab-panel>
+  <app-tab-panel title="Tab 3">
+    content tab 3
+  </app-tab-panel>
+<app-tab-panel title="Tab 4" *ngIf="showTab">
+    content tab 4
+</app-tab-panel>
+</app-tab-group>

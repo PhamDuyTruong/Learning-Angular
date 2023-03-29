@@ -15,6 +15,7 @@ export class AppComponent {
   isWarning = false;
   checked=true;
   counter = 1;
+  showTab = true;
 
   ngOnInit(){
     console.log('On init', this.toggleComp);
