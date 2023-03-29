@@ -45,3 +45,22 @@
 
 <!-- Bai 10 -->
 <button (click)="toggleComp.toggle()">Toggle me</button>
+
+<!-- Bai 14 -->
+<div class="card">
+  <div class="card-header">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> items.
+  </div>
+  <div class="card-body">
+    There are <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> items was
+    selected.
+  </div>
+  <div class="card-footer">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> items.
+  </div>
+</div>
+<ng-template #counterTmpl>
+  <span class="badge badge-danger">{{counter}}</span> items
+</ng-template>

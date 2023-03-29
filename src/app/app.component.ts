@@ -14,6 +14,7 @@ export class AppComponent {
   isDanger = false;
   isWarning = false;
   checked=true;
+  counter = 1;
 
   ngOnInit(){
     console.log('On init', this.toggleComp);
