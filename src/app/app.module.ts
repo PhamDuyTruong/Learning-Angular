@@ -14,7 +14,10 @@ import { TabPanelComponent } from './tab-panel/tab-panel.component';
 import {TabPanelContentDirective} from './tab-panel-content.directive';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import {AppTitlePipe} from './pipe-example/app-title.pipe'
-import {IsAdultPipe} from './pipe-example/isAdult.pipe'
+import {IsAdultPipe} from './pipe-example/isAdult.pipe';
+import { PostComponentComponent } from './post-component/post-component.component';
+import { PostListComponent } from './post-list/post-list.component'
+import { PostService } from './services/post.services';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import {IsAdultPipe} from './pipe-example/isAdult.pipe'
     TabPanelContentDirective,
     PipeExampleComponent,
     AppTitlePipe,
-    IsAdultPipe
+    IsAdultPipe,
+    PostComponentComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
