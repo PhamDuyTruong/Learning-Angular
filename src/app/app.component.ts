@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, NgForm } from '@angular/forms';
 import { ToggleComponent } from './toggle/toggle.component';
 
 @Component({
@@ -10,7 +11,9 @@ export class AppComponent {
   @ViewChild('toggleComp') toggleComp: ToggleComponent | undefined;
   @ViewChild('toggleBtn') toggleBtn: ElementRef<HTMLButtonElement> | undefined;
   title = 'angular-100-doc';
-  name = 'angular 13';
+  name='';
+  email = '';
+  address = ''
   isDanger = false;
   isWarning = false;
   checked=true;
@@ -23,5 +26,13 @@ export class AppComponent {
 
   ngAfterViewInit(){
     console.log(this.toggleComp);
+  }
+
+  saveData(f: NgForm){
+
+  }
+
+  getValue(f: FormControl){
+
   }
 }

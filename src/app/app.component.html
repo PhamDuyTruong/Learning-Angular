@@ -87,3 +87,51 @@
 <br />
 <app-pipe-example></app-pipe-example>
 
+<br />
+<div class="container form-area mt-5">
+  <h3>User Details</h3>
+  <form #f="ngForm" (submit)="saveData(f)">
+    <div class="form-group">
+      <label>Name: </label>
+      <input class="form-control" type="text" placeholder="Name" name="fullName" ngModel #fullName='ngModel' (change)="getValue(fullName.value)" required
+       [ngClass]="{'is-invalid': fullName.touched && fullName.invalid}"
+       minlength="5"
+      />
+      <div *ngIf="fullName.errors">
+        <div class="alert alert-danger" *ngIf="fullName.touched && fullName.invalid">Full Name is required</div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label>Email: </label>
+      <input  class="form-control" type="email" placeholder="Email" name="email" ngModel #email="ngModel" (change)="getValue(email.value)" required/>
+      <div *ngIf="email.errors">
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Email is required</div>
+      </div>
+    </div>
+
+    <div>
+      <label>Address: </label>
+      <textarea  class="form-control" cols="30" rows="10" placeholder="Address" name="address" ngModel #address="ngModel" required></textarea>
+      <div *ngIf="address.errors">
+        <div class="alert alert-danger" *ngIf="address.touched && address.invalid">Address is required</div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" type="submit">Save Data</button>
+  </form>
+
+</div>
+
+<div class="container mt-4">
+    <div class="table-area">
+        <table width="500">
+            <thead>
+               <th>#</th>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Address</th>
+            </thead>
+        </table>
+    </div>
+</div>
