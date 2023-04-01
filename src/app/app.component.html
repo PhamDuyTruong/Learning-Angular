@@ -1,4 +1,4 @@
-<app-hello></app-hello>
+<!-- <app-hello></app-hello>
 <br />
 <app-bai05></app-bai05>
 <br />
@@ -17,11 +17,9 @@
     Toggle Warning
 </button>
 
-<!-- Cách 1 -->
 <div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning">
 </div>
 
-<!-- Cách 2 -->
 <div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}">
 </div>
 
@@ -35,18 +33,13 @@
 
 <br />
 
-<!-- Bai 8 -->
 <app-author-list></app-author-list>
 
-<!-- Bai 9 -->
 <br />
-<!-- ToggleComp là instance của ToggleComponent -->
 <app-toggle #toggleComp [(checked)]="checked"></app-toggle>
 
-<!-- Bai 10 -->
 <button (click)="toggleComp.toggle()">Toggle me</button>
 
-<!-- Bai 14 -->
 <div class="card">
   <div class="card-header">
     You have selected
@@ -65,7 +58,6 @@
   <span class="badge badge-danger">{{counter}}</span> items
 </ng-template>
 
-<!-- Bai 15 -->
 <br />
 <button class="btn btn-primary" (click)="showTab = !showTab">Toggle Tab 4</button>
 <app-tab-group>
@@ -83,7 +75,6 @@
 </app-tab-panel>
 </app-tab-group>
 
-<!-- Day 18: Hoc ve pipe -->
 <br />
 <app-pipe-example></app-pipe-example>
 
@@ -185,4 +176,5 @@
 <br />
 <button routerLink="/">Home</button>
 <button routerLink="/posts">Post List</button>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
