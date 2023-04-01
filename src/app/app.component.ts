@@ -1,13 +1,14 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormControl, NgForm, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ToggleComponent } from './toggle/toggle.component';
+import {Observable} from 'rxjs'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild('toggleComp') toggleComp: ToggleComponent | undefined;
   @ViewChild('toggleBtn') toggleBtn: ElementRef<HTMLButtonElement> | undefined;
   title = 'angular-100-doc';
@@ -57,6 +58,14 @@ export class AppComponent {
   }
 
   ngOnInit(){
+    const osTest$ = new Observable(observer => {
+      observer.next('Returned from observation');
+      observer.next("This is the second observation");
+      observer.next("This is the third observation")
+    }).subscribe(value => console.log(value));
+    const osTest = function(){
+
+    }
     console.log('On init', this.toggleComp);
   }
 
