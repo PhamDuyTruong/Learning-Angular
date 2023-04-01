@@ -51,8 +51,15 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatIconModule,
   ],
   providers: [
 
