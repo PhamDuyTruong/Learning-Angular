@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms';
+import { FormControl, NgForm, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ToggleComponent } from './toggle/toggle.component';
 
 @Component({
@@ -19,6 +19,38 @@ export class AppComponent {
   checked=true;
   counter = 1;
   showTab = true;
+  form: any
+
+
+  constructor(){
+    this.form = new FormGroup({
+      fullName: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      email: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
+      skills: new FormArray([])
+    })
+  };
+
+  get fullname(){
+    return this.form.get("fullName")
+  };
+
+  get Email(){
+    return this.form.get("email")
+  }
+
+  get Address(){
+    return this.form.get("address")
+  };
+
+  get Skills(){
+    return this.form.get("skills")
+  }
+
+  addSkills(skill: HTMLInputElement){
+      (this.form.get("skills") as FormArray).push(new FormControl(skill.value));
+      skill.value = ''
+  }
 
   ngOnInit(){
     console.log('On init', this.toggleComp);
@@ -29,7 +61,11 @@ export class AppComponent {
   }
 
   saveData(f: NgForm){
+  }
 
+
+  onSubmit(){
+    console.log(this.form.value)
   }
 
   getValue(f: FormControl){
