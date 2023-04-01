@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {RouterModule} from '@angular/router'
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { Bai05Component } from './bai05/bai05.component';
@@ -18,6 +18,7 @@ import {IsAdultPipe} from './pipe-example/isAdult.pipe';
 import { PostComponentComponent } from './post-component/post-component.component';
 import { PostListComponent } from './post-list/post-list.component'
 import { PostService } from './services/post.services';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,16 @@ import { PostService } from './services/post.services';
     AppTitlePipe,
     IsAdultPipe,
     PostComponentComponent,
-    PostListComponent
+    PostListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path:'posts', component: PostListComponent}
+    ])
   ],
   providers: [
     PostService

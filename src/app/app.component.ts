@@ -50,6 +50,10 @@ export class AppComponent {
   addSkills(skill: HTMLInputElement){
       (this.form.get("skills") as FormArray).push(new FormControl(skill.value));
       skill.value = ''
+  };
+
+  removeSkill(index: number){
+    this.Skills.removeAt(index);
   }
 
   ngOnInit(){
