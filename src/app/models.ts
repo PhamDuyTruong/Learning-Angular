@@ -1,5 +1,6 @@
 
 export interface Game {
+  slug: string;
   background_image: string;
   name: string;
   released: string;

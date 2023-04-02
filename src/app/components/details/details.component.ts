@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     }
     ngOnInit(): void {
       this.routeSub = this.activatedSub.params.subscribe((params: Params) => {
-        this.gameSub = params['id'];
+        this.gameId = params['id'];
         this.getGameDetails(this.gameId!)
       })
     };
@@ -32,9 +32,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
     getGameDetails(id: string): void{
       this.gameSub = this.httpService.getGameDetails(id).subscribe((gameRes: Game) => {
         this.game = gameRes;
+        console.log(gameRes)
         setTimeout(() => {
-            this.gameRating =  Number(this.game?.metacritic);
-        }, 2000)
+            this.gameRating =  (this.game?.metacritic as number);
+        }, 1000)
       })
     };
 

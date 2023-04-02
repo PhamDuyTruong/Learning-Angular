@@ -39,7 +39,11 @@ const routes: Routes = [
   },
   {
     path: 'search/:game-search',
-    component: SearchBarComponent
+    component: HomeComponent
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent
   }
 ]
 
@@ -57,6 +61,7 @@ const routes: Routes = [
     ReactiveFormsModule,
 
     RouterModule.forRoot(routes),
+    GaugeModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
 
